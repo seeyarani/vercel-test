@@ -1,2 +1,0 @@
-# vercel-test
-vercel test
