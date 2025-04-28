@@ -1,4 +1,4 @@
 export default function handler(req, res) {
-  const myArray = ['apple', 'banana', 'orange'];
+  const myArray = ['spiderman', 'barbie', 'batman'];
   res.status(200).json(myArray);
 }
