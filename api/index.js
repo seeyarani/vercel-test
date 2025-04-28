@@ -4,7 +4,7 @@
 // }
 
 
-async function duskbyteTestPayload(request) {
+export default async function handler(req, res) {
   // Create query string from request parameters
   const queryString = new URLSearchParams(request).toString();
 
