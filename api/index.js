@@ -8,29 +8,31 @@ export default async function handler(req, res) {
   // Create query string from request parameters
   const queryString = new URLSearchParams(request).toString();
 
+  console.log('Testing', queryString);
+
   // Define base URL
-  const baseUrl = `https://script.google.com/macros/s/AKfycbxrQ1UyYtoXiZbzrUms1W9HuM7H-4652I0hhZLphPBC7TMTJYNeJKGSikLeNtGhq0jk/exec?${queryString}`;
+  // const baseUrl = `https://script.google.com/macros/s/AKfycbxrQ1UyYtoXiZbzrUms1W9HuM7H-4652I0hhZLphPBC7TMTJYNeJKGSikLeNtGhq0jk/exec?${queryString}`;
 
-  // Log the constructed URL
-  console.log(baseUrl);
+  // // Log the constructed URL
+  // console.log(baseUrl);
 
-  try {
-    // Make GET request with a timeout of 600 ms (10 minutes in JavaScript is 600000 ms)
-    const response = await fetch(baseUrl, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      timeout: 600000 // Timeout in milliseconds
-    });
+  // try {
+  //   // Make GET request with a timeout of 600 ms (10 minutes in JavaScript is 600000 ms)
+  //   const response = await fetch(baseUrl, {
+  //     method: 'GET',
+  //     headers: {
+  //       'Content-Type': 'application/json'
+  //     },
+  //     timeout: 600000 // Timeout in milliseconds
+  //   });
 
-    // Parse the response as JSON
-    const data = await response.json();
+  //   // Parse the response as JSON
+  //   const data = await response.json();
 
-    // Return the JSON response
-    return data;
-  } catch (error) {
-    console.error('Error making request:', error);
-    throw error; // Optionally handle the error further
-  }
+  //   // Return the JSON response
+  //   return data;
+  // } catch (error) {
+  //   console.error('Error making request:', error);
+  //   throw error; // Optionally handle the error further
+  // }
 }
