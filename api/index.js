@@ -10,6 +10,8 @@ export default async function handler(req, res) {
 
   console.log('Testing');
 
+  res.status(200).json([]);
+
   // Define base URL
   // const baseUrl = `https://script.google.com/macros/s/AKfycbxrQ1UyYtoXiZbzrUms1W9HuM7H-4652I0hhZLphPBC7TMTJYNeJKGSikLeNtGhq0jk/exec?${queryString}`;
 
