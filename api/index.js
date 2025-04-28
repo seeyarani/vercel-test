@@ -1,9 +1,3 @@
-// export default function handler(req, res) {
-//   const myArray = ['spiderman', 'barbie', 'batman'];
-//   res.status(200).json(myArray);
-// }
-
-
 export default async function handler(req, res) {
   // Create query string from request parameters
   const queryString = new URLSearchParams(req.query).toString();
@@ -11,11 +5,7 @@ export default async function handler(req, res) {
   // Define base URL
   const baseUrl = `https://script.google.com/macros/s/AKfycbxrQ1UyYtoXiZbzrUms1W9HuM7H-4652I0hhZLphPBC7TMTJYNeJKGSikLeNtGhq0jk/exec?${queryString}`;
 
-  // // Log the constructed URL
-  // console.log(baseUrl);
-
   try {
-    // Make GET request with a timeout of 600 ms (10 minutes in JavaScript is 600000 ms)
     const response = await fetch(baseUrl, {
       method: 'GET',
       headers: {
@@ -29,11 +19,7 @@ export default async function handler(req, res) {
 
     // Return the JSON response
     return res.status(200).json(data);
-    return data;
   } catch (error) {
-    console.error('Error making request:', error);
-    throw error; // Optionally handle the error further
+    return res.status(500).json({ error: 'Internal Server Error' });
   }
-
-  res.status(200).json([]);
 }
