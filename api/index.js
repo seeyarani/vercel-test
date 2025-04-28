@@ -21,13 +21,14 @@ export default async function handler(req, res) {
       headers: {
         'Content-Type': 'application/json'
       },
-      timeout: 600000 // Timeout in milliseconds
+      timeout: 30000 // Timeout in milliseconds
     });
 
     // Parse the response as JSON
     const data = await response.json();
 
     // Return the JSON response
+    return res.status(200).json(data);
     return data;
   } catch (error) {
     console.error('Error making request:', error);
