@@ -8,10 +8,10 @@ export default async function handler(req, res) {
   // Create query string from request parameters
   const queryString = new URLSearchParams(request).toString();
 
-  res.status(200).json([]);
-
   // Define base URL
-  // const baseUrl = `https://script.google.com/macros/s/AKfycbxrQ1UyYtoXiZbzrUms1W9HuM7H-4652I0hhZLphPBC7TMTJYNeJKGSikLeNtGhq0jk/exec?${queryString}`;
+  const baseUrl = `https://script.google.com/macros/s/AKfycbxrQ1UyYtoXiZbzrUms1W9HuM7H-4652I0hhZLphPBC7TMTJYNeJKGSikLeNtGhq0jk/exec?${queryString}`;
+
+  res.status(200).json([]);
 
   // // Log the constructed URL
   // console.log(baseUrl);
